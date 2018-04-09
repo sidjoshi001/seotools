@@ -1,4 +1,4 @@
-# SEOTools - SEO Tools for Laravel and Lumen
+# SEOTools - SEO Tools for Laravel and Lumen Modified By Siddharth
 
 SEOTools is a package for **Laravel 5+** and **Lumen** that provides helpers for some common SEO techniques.
 
