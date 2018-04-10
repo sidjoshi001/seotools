@@ -58,15 +58,22 @@ class TwitterCards implements TwitterCardsContract
     protected function eachValue(array $values, $prefix = null)
     {
         foreach ($values as $key => $value):
-            if (is_array($value)):
-                $this->eachValue($value, $key); else:
-                if (is_numeric($key)):
-                    $key = $prefix.$key; elseif (is_string($prefix)):
-                    $key = $prefix.':'.$key;
-        endif;
 
-        $this->html[] = $this->makeTag($key, $value);
-        endif;
+            if (is_array($value)):
+                $this->eachValue($value, $key);
+            else:
+                if (is_numeric($key)):
+                    $key = $prefix.$key;
+                elseif (is_string($prefix)):
+                    $key = $prefix.':'.$key;
+                endif;
+
+                if ($key == 'url')
+                    $value = app('url')->current();
+
+                $this->html[] = $this->makeTag($key, $value);
+            endif;
+
         endforeach;
     }
 
