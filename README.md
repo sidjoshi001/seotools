@@ -1,6 +1,9 @@
 # SEOTools - SEO Tools for Laravel and Lumen
 
+
 SEOTools is a package for **Laravel 5+** and **Lumen** that provides helpers for some common SEO techniques.
+
+## Modified for Tymk Softwares for Internal Uses
 
 > Current Build Status
 
@@ -375,10 +378,10 @@ class CommomController extends Controller
 	{!! Twitter::generate() !!}
 	    <!-- OR -->
 	{!! SEO::generate() !!}
-	
+
 	  <!-- MINIFIED -->
 	{!! SEO::generate(true) !!}
-	
+
 
 	    <!-- LUMEN -->
 	{!! app('seotools')->generate() !!}
